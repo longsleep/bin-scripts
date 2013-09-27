@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [ "$1" = "" ]; then
+    echo "$0 [up/down]"
+    exit 1
+fi
+
+DIRECTION=$1
+INCREMENT=25
+
+DEVFILE=/sys/class/leds/chromeos\:\:kbd_backlight/brightness
+
+CURR=`cat $DEVFILE`
+NEW=$CURR
+
+if [ "$DIRECTION"x == "up"x ]; then
+    NEW=$(( $CURR + $INCREMENT ))
+fi
+
+if [ "$DIRECTION"x == "down"x ]; then
+    NEW=$(( $CURR - $INCREMENT ))
+fi
+
+if [ "$CURR" -gt "100" ]; then
+    NEW=100
+fi
+
+if [ "$CURR" -lt "0" ]; then
+    NEW=0
+fi
+
+echo $NEW > $DEVFILE
