@@ -15,18 +15,27 @@
 
 
 if [ "$1" = "" ]; then
-    echo "$0 [on/off]"
+    echo "$0 [on/off/toggle]"
     exit 1
 fi
 
 MODE=$1
-
 DEVFILE=/sys/class/leds/chromeos\:\:kbd_backlight/brightness
 
 VALUE=0
+CURR=`cat $DEVFILE`
 
 if [ "$MODE"x == "on"x ]; then
     VALUE=100
 fi
+
+if [ "$MODE"x == "toggle"x ]; then
+	if [ "$CURR" == "100" ]; then
+		VALUE=0
+	else
+		VALUE=100
+	fi
+fi
+
 
 echo $VALUE | sudo /usr/bin/tee $DEVFILE
