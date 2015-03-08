@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Simple script to turn manage X display brightness.
+#
+# This script requires the xdotool utility `apt-get install xdotool`.
+#
+# This script was written by Simon Eisenmann <simon@longsleep.org> in 2015.
+
+
+if [ "$1" = "" ]; then
+    echo "$0 [up/down]"
+    exit 1
+fi
+
+MODE=$1
+XDOTOOL="/usr/bin/xdotool"
+
+KEY="XF86MonBrightnessDown"
+if [ "$MODE"x == "up"x ]; then
+    KEY="XF86MonBrightnessUp"
+fi
+
+
+$XDOTOOL key $KEY
