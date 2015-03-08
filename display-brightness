@@ -21,4 +21,4 @@ if [ "$MODE"x == "up"x ]; then
 fi
 
 
-$XDOTOOL key $KEY
+$XDOTOOL key --clearmodifiers $KEY
