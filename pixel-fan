@@ -1,0 +1,8 @@
+#!/bin/sh
+
+duration=1
+if [ -n "$1" ]; then
+	duration=$1
+fi
+
+sudo su -c "ectool fanduty 100; sleep $duration; ectool autofanctrl on" 2>/dev/null
