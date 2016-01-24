@@ -1,0 +1,10 @@
+#!/bin/sh
+
+DEV=$1
+if [ -z "$DEV" ]; then
+	DEV=/dev/ttyUSB0
+fi
+
+echo "Using picocom - exit with Ctrl+a, then Ctrl+x"
+echo
+picocom -b 115200 $DEV
