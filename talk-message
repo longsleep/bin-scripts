@@ -1,0 +1,3 @@
+#!/bin/bash
+
+espeak -v mb-us1 -s 120 "$@"
