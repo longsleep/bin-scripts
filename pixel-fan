@@ -5,4 +5,4 @@ if [ -n "$1" ]; then
 	duration=$1
 fi
 
-sudo su -c "ectool fanduty 100; sleep $duration; ectool autofanctrl on" 2>/dev/null
+sudo su -c "ectool --interface=lpc fanduty 100; sleep $duration; ectool --interface=lpc autofanctrl on" 2>/dev/null
