@@ -1,0 +1,17 @@
+settitle() {
+  printf "\033k$1\033\\"
+}
+
+ssh() {
+  settitle "ssh:$*"
+  command ssh "$@"
+  settitle "bash"
+}
+
+mosh() {
+  settitle "mosh:$*"
+  command mosh "$@"
+  settitle "bash"
+}
+
+
