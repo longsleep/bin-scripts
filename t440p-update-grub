@@ -1,0 +1,9 @@
+#!/bin/sh
+
+set -ex
+
+# grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader=ubuntu --boot-directory=/boot/efi/EFI/ubuntu --recheck
+
+sudo update-grub
+sudo update-grub -o /boot/efi/EFI/ubuntu/grub/grub.cfg
+

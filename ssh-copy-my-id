@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+KEY=$1
+ID=$2
+TARGET=$3 # user@hostname
+
+
+cat "$KEY" | ssh -i "$ID" "$TARGET" 'cat >> .ssh/authorized_keys && echo "Key added"'
