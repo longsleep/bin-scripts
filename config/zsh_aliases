@@ -1,0 +1,24 @@
+alias tmux='tmux-next -2'
+alias mv='mv -i'
+alias ls='ls --color=auto'
+
+ff() {
+    find . -iname "*$@*"
+}
+
+settitle() {
+  printf "\033k$1\033\\"
+}
+
+ssh() {
+  settitle "ssh:$*"
+  command ssh "$@"
+  settitle "zsh"
+}
+
+mosh() {
+  settitle "mosh:$*"
+  command mosh "$@"
+  settitle "zsh"
+}
+
