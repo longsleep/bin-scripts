@@ -44,9 +44,9 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 setopt RM_STAR_WAIT
 setopt interactivecomments
-setopt CORRECT
+#setopt CORRECT
 
-export PATH=~/bin:$PATH
+export PATH=~/bin:~/.local/bin:$PATH
 
 source ~/.zsh_aliases
 

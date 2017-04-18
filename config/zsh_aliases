@@ -2,6 +2,9 @@ alias tmux='tmux-next -2'
 alias mv='mv -i'
 alias ls='ls --color=auto'
 
+# https://github.com/nvbn/thefuck
+eval $(thefuck --alias)
+
 ff() {
     find . -iname "*$@*"
 }
