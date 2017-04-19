@@ -5,6 +5,12 @@ alias ls='ls --color=auto'
 # https://github.com/nvbn/thefuck
 eval $(thefuck --alias)
 
+# https://github.com/creationix/nvm
+if [ -d "$HOME/.nvm" -a -s "$HOME/.nvm/nvm.sh" ]; then
+	export NVM_DIR="$HOME/.nvm"
+	source "$NVM_DIR/nvm.sh"
+fi
+
 ff() {
     find . -iname "*$@*"
 }
