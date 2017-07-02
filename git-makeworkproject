@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# Simple wrapper, to help remembering how to switch to work profile for git.
+# git config --global alias.workprofile 'config user.email "you@work.local"'
+
+exec git workprofile
