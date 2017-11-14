@@ -1,3 +1,6 @@
+unsetopt correct_all
+setopt correct
+
 alias tmux='tmux-next -2'
 alias mv='mv -i'
 alias ls='ls --color=auto'
