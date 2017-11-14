@@ -1,0 +1,21 @@
+#!/bin/sh
+
+BACKLIGHT=/sys/class/backlight/intel_backlight
+
+case "$1" in
+    --get-max-brightness)
+        cat $BACKLIGHT/max_brightness
+        ;;
+
+    --set-brightness)
+        echo "$2" > $BACKLIGHT/brightness
+        ;;
+
+    --get-brightness)
+        cat $BACKLIGHT/actual_brightness
+        ;;
+
+    *)
+        ;;
+
+esac
