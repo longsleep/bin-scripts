@@ -4,6 +4,10 @@ set -ex
 
 # grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader=ubuntu --boot-directory=/boot/efi/EFI/ubuntu --recheck
 
+# /boot/efi/EFI/ubuntu/grub.cfg
+#search.fs_uuid 2FBC-2066 root hd0,gpt1
+#set prefix=($root)'/EFI/ubuntu/grub'
+#configfile $prefix/grub.cfg
+
 sudo update-grub
 sudo update-grub -o /boot/efi/EFI/ubuntu/grub/grub.cfg
-
