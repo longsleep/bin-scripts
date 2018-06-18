@@ -6,7 +6,7 @@ alias mv='mv -i'
 alias ls='ls --color=auto'
 
 # https://github.com/nvbn/thefuck
-eval $(thefuck --alias)
+eval $(thefuck --alias --enable-experimental-instant-mode)
 
 settitle() {
   printf "\033k$1\033\\"
@@ -23,3 +23,7 @@ mosh() {
   command mosh "$@"
   settitle "zsh"
 }
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+	source /etc/profile.d/vte.sh
+fi
