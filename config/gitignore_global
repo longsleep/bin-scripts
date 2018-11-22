@@ -1,0 +1,6 @@
+/myrun.sh
+/myrun-*
+/tunnel-to-kopano.sh
+/*.aci
+/*.aci.asc
+/Caddyfile*.my
