@@ -1,4 +1,4 @@
 #!/bin/sh
 
-exec tmux-next new-session
+exec /usr/bin/tmux -2 new-session
 
