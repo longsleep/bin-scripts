@@ -1,12 +1,11 @@
 unsetopt correct_all
 setopt correct
 
-alias tmux='tmux-next -2'
 alias mv='mv -i'
 alias ls='ls --color=auto'
 
 # https://github.com/nvbn/thefuck
-eval $(thefuck --alias --enable-experimental-instant-mode)
+eval $(thefuck --alias)
 
 settitle() {
   printf "\033k$1\033\\"
