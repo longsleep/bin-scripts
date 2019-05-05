@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Adapted from https://blog.rabin.io/linux/start-chrome-temp-profile-with-preinstalled-extension
+
+set -e
+
+BASE_TEMP_DIR=/tmp
+TEMP_DIR=$(mktemp -d $BASE_TEMP_DIR/iridium-browser.XXXXXXX)
+
+echo "Running Iridium Browser with temp folder in: $TEMP_DIR"
+iridium-browser --user-data-dir=$TEMP_DIR --no-first-run "$@"
+
+rm -rf $TEMP_DIR
+
