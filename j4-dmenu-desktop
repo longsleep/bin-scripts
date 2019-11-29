@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec j4-dmenu-desktop --dmenu="dmenu -b -i -nb '#000000' -nf '#CFCFCF' -sb '#D53C0A' -sf '#FFFFFF' -fn 'Fira Sans:pixelsize=22'" --term="gnome-terminal"
