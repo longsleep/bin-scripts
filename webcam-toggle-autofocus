@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -e
+
+VALUE="$1"
+
+if [ -z "$VALUE" ]; then
+    VALUE="0"
+fi
+
+NAME="USB  Live camera: USB  Live cam"
+CAMS=$(find /dev -name 'video*' -exec basename {} \; | sort)
+
+for cam in $CAMS; do
+    ct=$(v4l2-ctl -d /dev/$cam -D | grep -s "Card type" | grep -s "$NAME" || true)
+    if [ -n "$ct" -a -n "$(v4l2-ctl -d /dev/$cam -l)" ]; then
+        echo -n "${cam}: " && v4l2-ctl -d /dev/$cam --set-ctrl=focus_auto=$VALUE && v4l2-ctl -d /dev/$cam --set-ctrl=focus_absolute=240 && echo 'ok' || echo 'failed'
+    fi
+done
