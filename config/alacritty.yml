@@ -18,7 +18,7 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 78
+    columns: 80
     lines: 25
 
   # Window position (changes require restart)
@@ -153,7 +153,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 8.0
+  size: 11.5
 
   # Offset is the extra space around each character. `offset.y` can be thought of
   # as modifying the line spacing, and `offset.x` as modifying the letter spacing.
@@ -187,32 +187,37 @@ font:
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: true
 
-# Colors (Molokai Dark)
+# Colors (longsleep colors)
 colors:
   # Default colors
   primary:
-    background: '0x1B1D1E'
+    background: '0x2b2928'
     foreground: '0xF8F8F2'
+
   # Normal colors
   normal:
-    black:   '0x333333'
-    red:     '0xC4265E'
-    green:   '0x86B42B'
-    yellow:  '0xB3B42B'
-    blue:    '0x6A7EC8'
-    magenta: '0x8C6BC8'
-    cyan:    '0x56ADBC'
-    white:   '0xE3E3DD'
+    # NOTE: Use '0x131613' for the `black` color if you'd like to see
+    # black text on the background.
+    black:   '0x073642'
+    red:     '0xDC322F'
+    green:   '0x859900'
+    yellow:  '0xB58900'
+    blue:    '0x268BD2'
+    magenta: '0xD33682'
+    cyan:    '0x2AA198'
+    white:   '0xabb2bf'
+
   # Bright colors
   bright:
-    black:   '0x666666'
-    red:     '0xF92672'
-    green:   '0xA6E22E'
-    yellow:  '0xE2E22E'
-    blue:    '0x819AFF'
-    magenta: '0xAE81FF'
-    cyan:    '0x66D9EF'
-    white:   '0xF8F8F2'
+    black:   '0x5c6370'
+    red:     '0xCB4B16'
+    green:   '0x586E75'
+    yellow:  '0x657B83'
+    blue:    '0x839496'
+    magenta: '0x6C71C4'
+    cyan:    '0x56b6c2'
+    white:   '0xFDF6E3'
+
 
 # Visual Bell
 #
@@ -244,7 +249,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.95
+background_opacity: 1.0
 
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
