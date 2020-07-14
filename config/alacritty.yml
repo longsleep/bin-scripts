@@ -110,7 +110,7 @@ font:
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
     #family: monospace
-    family: Fira Mono
+    family: Fira Mono for Powerline
     #family: Droid Sans Mono Slashed for Powerline
 
     # The `style` can be specified to pick a specific face.
@@ -122,7 +122,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Mono
+    family: Fira Mono for Powerline
     #family: Droid Sans Mono Slashed for Powerline
 
     # The `style` can be specified to pick a specific face.
@@ -134,7 +134,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Mono
+    family: Fira Mono for Powerline
     #family: Droid Sans Mono Slashed for Powerline
 
     # The `style` can be specified to pick a specific face.
@@ -146,7 +146,7 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Fira Mono
+    family: Fira Mono for Powerline
     #family: Droid Sans Mono Slashed for Powerline
 
     # The `style` can be specified to pick a specific face.
