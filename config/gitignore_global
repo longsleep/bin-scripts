@@ -1,5 +1,5 @@
-/myrun.sh
-/myrun-*
+myrun.sh
+myrun-*
 /tunnel-to-kopano.sh
 /*.aci
 /*.aci.asc
