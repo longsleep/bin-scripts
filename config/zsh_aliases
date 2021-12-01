@@ -23,6 +23,12 @@ mosh() {
   settitle "zsh"
 }
 
+# git diff before commit via https://github.com/Canop/broot
+unalias gg 2>/dev/null || true
+gg() {
+  br --conf ~/.config/broot/git-diff-conf.toml --git-status
+}
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
