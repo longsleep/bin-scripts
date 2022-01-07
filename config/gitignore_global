@@ -4,3 +4,4 @@ myrun-*
 /*.aci
 /*.aci.asc
 /Caddyfile*.my
+Caddyfile2*

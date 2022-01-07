@@ -23,6 +23,29 @@ mosh() {
   settitle "zsh"
 }
 
+# git diff before commit via https://github.com/Canop/broot
+unalias gg 2>/dev/null || true
+gg() {
+  br --conf ~/.config/broot/git-diff-conf.toml --git-status
+}
+
+# lazygit https://github.com/jesseduffield/lazygit
+lg() {
+  export LAZYGIT_NEW_DIR_FILE=~/.lazygit/newdir
+
+  lazygit "$@"
+
+  if [ -f $LAZYGIT_NEW_DIR_FILE ]; then
+    cd "$(cat $LAZYGIT_NEW_DIR_FILE)"
+	rm -f $LAZYGIT_NEW_DIR_FILE > /dev/null
+  fi
+}
+
+# lazydocker https://github.com/jesseduffield/lazydocker
+lzd() {
+	lazydocker "$@"
+}
+
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
