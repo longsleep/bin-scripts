@@ -5,22 +5,23 @@ alias mv='mv -i'
 alias ls='ls --color=auto'
 
 # https://github.com/nvbn/thefuck
-eval $(thefuck --alias)
+#eval $(thefuck --alias)
 
-settitle() {
+mysettitle() {
   printf "\033k$1\033\\"
+  #printf "\033]0;$1\a"
 }
 
 ssh() {
-  settitle "ssh:$*"
+  mysettitle "ssh:$*"
   command ssh "$@"
-  settitle "zsh"
+  mysettitle "zsh"
 }
 
 mosh() {
-  settitle "mosh:$*"
+  mysettitle "mosh:$*"
   command mosh "$@"
-  settitle "zsh"
+  mysettitle "zsh"
 }
 
 # git diff before commit via https://github.com/Canop/broot
@@ -49,3 +50,4 @@ lzd() {
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 	source /etc/profile.d/vte.sh
 fi
+
