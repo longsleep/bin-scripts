@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -x
+
+OPT=${OPT:--A}
+
+#iptables ${OPT} FORWARD -i vboxnet0 -s 192.168.56.0/24 -m conntrack --ctstate NEW -j ACCEPT
+#iptables ${OPT} FORWARD -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+iptables -t nat ${OPT} POSTROUTING -s 192.168.56.0/24 -o enx3c18a003b0b7 -j MASQUERADE
+
