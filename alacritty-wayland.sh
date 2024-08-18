@@ -7,4 +7,4 @@ set -e
 
 ALACRITTY=$(which alacritty.real || which alacritty)
 
-exec env WAYLAND_DISPLAY= $ALACRITTY "$@"
+exec env WINIT_UNIX_BACKEND=x11 $ALACRITTY "$@"
