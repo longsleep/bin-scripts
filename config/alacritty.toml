@@ -1,0 +1,48 @@
+[colors.bright]
+black = "0x5c6370"
+blue = "0x839496"
+cyan = "0x56b6c2"
+green = "0x586E75"
+magenta = "0x6C71C4"
+red = "0xCB4B16"
+white = "0xFDF6E3"
+yellow = "0x657B83"
+
+[colors.normal]
+black = "0x073642"
+blue = "0x268BD2"
+cyan = "0x2AA198"
+green = "0x859900"
+magenta = "0xD33682"
+red = "0xDC322F"
+white = "0xabb2bf"
+yellow = "0xB58900"
+
+[colors.primary]
+background = "0x2b2928"
+foreground = "0xF8F8F2"
+
+[font]
+size = 11
+
+[font.bold]
+family = "Fira Mono for Powerline"
+
+[font.bold_italic]
+family = "Fira Mono for Powerline"
+
+[font.italic]
+family = "Fira Mono for Powerline"
+
+[font.normal]
+family = "Fira Mono Nerd Font"
+
+[shell]
+program = "/home/longsleep/Dev/bin-scripts/tmux-terminal-helper"
+
+[window]
+opacity = 1.0
+
+[window.dimensions]
+columns = 80
+lines = 25
