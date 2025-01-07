@@ -3,32 +3,29 @@ setopt correct
 
 alias mv='mv -i'
 alias ls='ls --color=auto'
+#alias icat='kitten icat'
+#alias s='kitten ssh'
+alias s='wezterm ssh'
 
 # https://github.com/nvbn/thefuck
-#eval $(thefuck --alias)
+eval $(thefuck --alias)
 
-mysettitle() {
-  printf "\033k$1\033\\"
-  #printf "\033]0;$1\a"
-}
+#mysettitle() {
+#  printf "\033k$1\033\\"
+#  #printf "\033]0;$1\a"
+#}
 
-ssh() {
-  mysettitle "ssh:$*"
-  command ssh "$@"
-  mysettitle "zsh"
-}
+#ssh() {
+#  mysettitle "ssh:$*"
+#  command ssh "$@"
+#  mysettitle "zsh"
+#}
 
-mosh() {
-  mysettitle "mosh:$*"
-  command mosh "$@"
-  mysettitle "zsh"
-}
-
-# git diff before commit via https://github.com/Canop/broot
-unalias gg 2>/dev/null || true
-gg() {
-  br --conf ~/.config/broot/git-diff-conf.toml --git-status
-}
+#mosh() {
+#  mysettitle "mosh:$*"
+#  command mosh "$@"
+#  mysettitle "zsh"
+#}
 
 # lazygit https://github.com/jesseduffield/lazygit
 lg() {
@@ -47,7 +44,10 @@ lzd() {
 	lazydocker "$@"
 }
 
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-	source /etc/profile.d/vte.sh
-fi
+[ -s "/home/longsleep/.scm_breeze/scm_breeze.sh" ] && source "/home/longsleep/.scm_breeze/scm_breeze.sh"
 
+# fzf https://github.com/junegunn/fzf
+source <(fzf --zsh)
+
+# broot https://dystroy.org/broot/
+source /home/longsleep/.config/broot/launcher/bash/br
