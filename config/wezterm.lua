@@ -5,13 +5,15 @@ local config = wezterm.config_builder()
 -- Color scheme:
 config.color_scheme = 'Monokai (terminal.sexy)'
 
-
+-- config.enable_wayland = false -- https://github.com/wez/wezterm/issues/5419
 config.font = wezterm.font('Fira Mono for Powerline', { weight = 'Medium' })
 config.font_size = 11.0
+config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 config.tab_bar_at_bottom = true
 config.enable_scroll_bar = true
---config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+-- config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+config.window_decorations = "TITLE|RESIZE"
 config.window_padding = {
   left = 0,
   right = 0,
@@ -20,18 +22,21 @@ config.window_padding = {
 }
 config.default_cursor_style = 'SteadyBlock'
 config.freetype_load_target = 'HorizontalLcd'
-config.command_palette_font_size = 11.0
+config.command_palette_font_size = 12.0
 config.command_palette_rows = 5
-config.ssh_backend = "Ssh2" -- Use Ssh2 for agent support
+
+-- ssh
+config.ssh_backend = "LibSsh"
+
 
 -- keyboard
 config.leader = { key = 'b', mods = 'CTRL', timeout_milliseconds = 1000 }
 config.keys = {
-  -- Send "CTRL-A" to the terminal when pressing CTRL-A, CTRL-A
+  -- Send "CTRL-B" to the terminal when pressing CTRL-B, CTRL-B
   {
-    key = 'a',
+    key = 'b',
     mods = 'LEADER|CTRL',
-    action = wezterm.action.SendKey { key = 'a', mods = 'CTRL' },
+    action = wezterm.action.SendKey { key = 'b', mods = 'CTRL' },
   },
   {
     key = '|',
@@ -42,6 +47,11 @@ config.keys = {
     key = '-',
     mods = 'LEADER',
     action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+  },
+  {
+    key = '/',
+	mods = 'LEADER',
+	action = wezterm.action.Search { CaseSensitiveString = "" },
   },
 }
 
