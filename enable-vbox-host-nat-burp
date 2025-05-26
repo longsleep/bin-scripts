@@ -3,7 +3,7 @@
 set -ex
 
 OPT=${OPT:--A}
-ADDRESS=${ADDRESS:-192.168.1.41}
+ADDRESS=${ADDRESS:-192.168.56.1}
 
 iptables -t nat ${OPT} PREROUTING -i vboxnet0 -p tcp -m multiport --dports 80,443,8443 -j DNAT --to-destination ${ADDRESS}:8080
 
