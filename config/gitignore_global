@@ -6,4 +6,7 @@ myrun-*
 /*.aci.asc
 /Caddyfile*.my
 Caddyfile2*
-
+CLAUDE.md
+.claude
+GEMINI.md
+.gemini
