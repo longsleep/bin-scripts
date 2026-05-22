@@ -7,7 +7,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "auto_update": false,
+  "auto_update_extensions": {},
+  "cli_default_open_behavior": "new_window",
+  "outline_panel": {
+    "dock": "left",
+  },
+  "collaboration_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
+  "title_bar": {
+    "show_sign_in": false,
+  },
   "project_panel": {
+    "dock": "left",
     "bold_folder_labels": false,
     "indent_size": 10.0,
     "folder_icons": false,
@@ -31,7 +47,8 @@
     "show_value_hints": true,
   },
   "agent": {
-    "play_sound_when_agent_done": true,
+    "dock": "right",
+    "play_sound_when_agent_done": "always",
     "enabled": false,
   },
   "git": {
