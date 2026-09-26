@@ -1,0 +1,47 @@
+#!/bin/sh
+#
+# pio - PlatformIO launcher which keeps the PlatformIO venv off the global PATH.
+#
+# Execs the real pio when it is available in PATH (venv activated), otherwise
+# prints how to activate the venv and exits.
+
+PENV=${PLATFORMIO_PENV:-$HOME/.platformio/penv}
+
+self=$(readlink -f "$0")
+
+set -f
+IFS=:
+for dir in $PATH; do
+	candidate="${dir:-.}/pio"
+	[ -f "$candidate" ] && [ -x "$candidate" ] || continue
+	[ "$(readlink -f "$candidate")" = "$self" ] && continue
+	exec "$candidate" "$@"
+done
+unset IFS
+set +f
+
+if [ ! -x "$PENV/bin/pio" ]; then
+	echo "pio: PlatformIO not found in $PENV" >&2
+	exit 1
+fi
+
+case "${SHELL##*/}" in
+fish)
+	activate="source $PENV/bin/activate.fish"
+	;;
+csh|tcsh)
+	activate="source $PENV/bin/activate.csh"
+	;;
+*)
+	activate=". $PENV/bin/activate"
+	;;
+esac
+
+cat >&2 <<EOF
+pio: PlatformIO venv is not active. Activate it with:
+
+	$activate
+
+Leave it again with: deactivate
+EOF
+exit 1
