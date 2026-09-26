@@ -10,3 +10,5 @@ CLAUDE.md
 .claude
 GEMINI.md
 .gemini
+
+**/.claude/settings.local.json
